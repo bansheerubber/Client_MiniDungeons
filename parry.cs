@@ -12,6 +12,10 @@ function holdParryModifier(%value) {
 	if(%value) {
 		ParryMouseMap.bind("mouse0", "button0", parryLeft);
 		ParryMouseMap.bind("mouse0", "button1", parryRight);
+		ParryMouseMap.bind("keyboard0", "ctrl w", "moveForward");
+		ParryMouseMap.bind("keyboard0", "ctrl a", "moveLeft");
+		ParryMouseMap.bind("keyboard0", "ctrl s", "moveBackward");
+		ParryMouseMap.bind("keyboard0", "ctrl d", "moveRight");
 		ParryMouseMap.push();
 	}
 	else {
