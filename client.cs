@@ -1,12 +1,12 @@
 schedule(1000, 0, exec, "Add-Ons/Client_MiniDungeons/adjustment.cs");
 
+exec("./profiles/outline.cs");
+
 if(!isObject(MD_Healthbar)) {
 	exec("./guis/MD_Healthbar.gui");
 }
 exec("./healthbar.cs");
 exec("./parry.cs");
-
-exec("./profiles/outline.cs");
 
 $MDC::Version = "r1";
 
