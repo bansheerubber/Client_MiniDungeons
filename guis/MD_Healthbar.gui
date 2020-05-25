@@ -1,0 +1,123 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(MD_Healthbar) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "right";
+   vertSizing = "bottom";
+   position = "0 0";
+   extent = "3000 1080";
+   minExtent = "8 2";
+   enabled = "1";
+   visible = "1";
+   clipToParent = "1";
+      vibrateHealthbar = "5228634";
+      hp = "100";
+      maxHp = "100";
+
+   new GuiControl(MD_Healthbar_Parent) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "right";
+      vertSizing = "top";
+      position = "10 893";
+      extent = "908 177";
+      minExtent = "8 2";
+      enabled = "1";
+      visible = "1";
+      clipToParent = "1";
+
+      new GuiBitmapCtrl(MD_Healthbar_Sword) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "0 0";
+         extent = "908 177";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         bitmap = "~/Client_MiniDungeons/textures/sword.png";
+         wrap = "0";
+         lockAspectRatio = "1";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         keepCached = "0";
+         mColor = "255 255 255 255";
+         mMultiply = "0";
+      };
+      new GuiControl(MD_Healthbar_Mask) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "0 0";
+         extent = "883 177";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+
+         new GuiBitmapCtrl(MD_Healthbar_Bar) {
+            profile = "GuiDefaultProfile";
+            horizSizing = "right";
+            vertSizing = "bottom";
+            position = "0 0";
+            extent = "908 177";
+            minExtent = "8 2";
+            enabled = "1";
+            visible = "1";
+            clipToParent = "1";
+            bitmap = "~/Client_MiniDungeons/textures/healthbar.png";
+            wrap = "0";
+            lockAspectRatio = "1";
+            alignLeft = "0";
+            alignTop = "0";
+            overflowImage = "0";
+            keepCached = "0";
+            mColor = "255 255 255 255";
+            mMultiply = "0";
+         };
+      };
+      new GuiMLTextCtrl(MD_Healthbar_Text) {
+         profile = "GuiMLTextProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "150 64";
+         extent = "405 45";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<font:Palatino Linotype:45><color:dddddd>1hp";
+         maxBitmapHeight = "-1";
+         selectable = "1";
+         autoResize = "1";
+            hp = "100";
+            fontSize = "45";
+            maxHp = "100";
+      };
+      new GuiMLTextCtrl(MD_Guard_Text) {
+         profile = "MD_OutlineTextProfile";
+         horizSizing = "right";
+         vertSizing = "relative";
+         position = "165 5";
+         extent = "430 45";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<font:Palatino Linotype:45><color:dddddd>M -> H -> M";
+         maxBitmapHeight = "-1";
+         selectable = "1";
+         autoResize = "1";
+            hp = "100";
+            fontSize = "28.8";
+            maxHp = "100";
+      };
+   };
+};
+//--- OBJECT WRITE END ---
