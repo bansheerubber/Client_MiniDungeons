@@ -4,17 +4,21 @@ datablock AudioProfile(MiniDungeonsSpawnSound) {
 	preload = true;
 };
 
-function miniDungeonsHandleSpawn() {
-	alxPlay(MiniDungeonsSpawnSound);
-	interpolateFOV(170, $pref::Player::defaultFov, 179, 0.025);
+function clientCmdMD_HandleSpawn() {
+	miniDungeonsHandleSpawn();
 }
 
-function interpolateFOV(%start, %end, %current, %speed) {
+function miniDungeonsHandleSpawn() {
+	alxPlay(MiniDungeonsSpawnSound);
+	interpolateFOV($pref::Player::defaultFov, 168, 0.025);
+}
+
+function interpolateFOV(%end, %current, %speed) {
 	%current -= mClampF((%current - %end) * %speed, 0.01, 1000);
 
 	if(%current > %end) {
 		PlayGUI.forceFOV = %current;
-		$MD::InterpolateFOV = schedule(16, 0, interpolateFOV, %start, %end, %current, %speed);
+		$MD::InterpolateFOV = schedule(16, 0, interpolateFOV, %end, %current, %speed);
 	}
 	else {
 		PlayGUI.forceFOV = 0;

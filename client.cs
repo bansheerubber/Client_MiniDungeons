@@ -7,6 +7,7 @@ if(!isObject(MD_Healthbar)) {
 }
 exec("./healthbar.cs");
 exec("./parry.cs");
+exec("./welcome.cs");
 
 $MDC::Version = "r1";
 
