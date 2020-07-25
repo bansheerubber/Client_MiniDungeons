@@ -3,6 +3,10 @@ if(!isObject(ParryMap)) {
 	new ActionMap(ParryMouseMap);
 }
 
+function clientCmdMD_SetUpParryMap() {
+	setUpParryMap();
+}
+
 function setUpParryMap() {
 	ParryMap.bind("keyboard0", "lcontrol", holdParryModifier);
 	ParryMap.push();
@@ -40,3 +44,12 @@ function parryRight(%value) {
 		commandToServer('stopParry');
 	}
 }
+
+deActivatePackage(MDCParryMap);
+package MDCParryMap {
+	function disconnect() {
+		Parent::disconnect();
+		ParryMap.pop();
+	}
+};
+activatePackage(MDCParryMap);

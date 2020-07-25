@@ -18,4 +18,5 @@ function clientCmdMD_Handshake() {
 	MD_Healthbar.hp = 100;
 	MD_Healthbar.maxHp = 100;
 	MD_Healthbar.resizeHealthbar();
+	MD_Healthbar.ready = true;
 }

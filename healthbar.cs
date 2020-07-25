@@ -163,7 +163,18 @@ package MDCHealthbar {
 	function PlayGUI::onRender(%this) {
 		Parent::onRender(%this);
 
-		MD_Healthbar.resizeHealthbar();
+		if(MD_Healthbar.ready) {
+			MD_Healthbar.resizeHealthbar();
+		}
+	}
+
+	function disconnect() {
+		Parent::disconnect();
+		
+		if(MD_Healthbar.ready) {
+			PlayGUI.remove(MD_Healthbar);
+			MD_Healthbar.ready = false;
+		}
 	}
 };
 activatePackage(MDCHealthbar);
