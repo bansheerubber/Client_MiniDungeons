@@ -1,0 +1,87 @@
+//--- OBJECT WRITE BEGIN ---
+new GuiControl(MD_Potion) {
+   profile = "GuiDefaultProfile";
+   horizSizing = "center";
+   vertSizing = "center";
+   position = "0 0";
+   extent = "1280 720";
+   minExtent = "8 2";
+   enabled = "1";
+   visible = "1";
+   clipToParent = "1";
+
+   new GuiSwatchCtrl(MD_PotionCenter) {
+      profile = "GuiDefaultProfile";
+      horizSizing = "center";
+      vertSizing = "center";
+      position = "330 258";
+      extent = "619 203";
+      minExtent = "8 2";
+      enabled = "1";
+      visible = "1";
+      clipToParent = "1";
+      color = "0 0 0 0";
+
+      new GuiMLTextCtrl(MD_PotionText) {
+         profile = "BlockChatTextSize4Profile";
+         horizSizing = "center";
+         vertSizing = "center";
+         position = "0 89";
+         extent = "619 24";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<just:center><color:ffff00>Left click: 15 HP | <color:555555>Right click: 50 HP";
+         maxBitmapHeight = "-1";
+         selectable = "1";
+         autoResize = "1";
+            format = "<just:center>%1Left click: %2 HP %3| %4Right click: %5 HP";
+      };
+      new GuiBitmapCtrl() {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "162 120";
+         extent = "294 12";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         bitmap = "~/Client_MiniDungeons/textures/background.png";
+         wrap = "0";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         keepCached = "0";
+         mColor = "0 0 0 255";
+         mMultiply = "0";
+      };
+      new GuiBitmapCtrl(MD_PotionBackground) {
+         profile = "GuiDefaultProfile";
+         horizSizing = "right";
+         vertSizing = "bottom";
+         position = "164 122";
+         extent = "96 8";
+         minExtent = "0 0";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         bitmap = "~/Client_MiniDungeons/textures/background.png";
+         wrap = "0";
+         lockAspectRatio = "0";
+         alignLeft = "0";
+         alignTop = "0";
+         overflowImage = "0";
+         keepCached = "0";
+         mColor = "255 0 0 255";
+         mMultiply = "0";
+            maxWidth = "290";
+      };
+   };
+};
+//--- OBJECT WRITE END ---

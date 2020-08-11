@@ -1,3 +1,7 @@
+if(!isObject(MD_Healthbar)) {
+	exec("./guis/MD_Healthbar.gui");
+}
+
 $MDC::HealthbarScaleFactor = 3000;
 
 function MD_Healthbar::resizeHealthbar(%this, %testRes) {
