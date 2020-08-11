@@ -45,11 +45,11 @@ function parryRight(%value) {
 	}
 }
 
-deActivatePackage(MDCParryMap);
-package MDCParryMap {
+deActivatePackage(MiniDungeonsClientParryMap);
+package MiniDungeonsClientParryMap {
 	function disconnect() {
 		Parent::disconnect();
 		ParryMap.pop();
 	}
 };
-activatePackage(MDCParryMap);
+activatePackage(MiniDungeonsClientParryMap);

@@ -41,12 +41,12 @@ function clientCmdMD_HidePotionBar() {
 	MD_Potion.hideUI();
 }
 
-deActivatePackage(MDCPotion);
-package MDCPotion {
+deActivatePackage(MiniDungeonsClientPotion);
+package MiniDungeonsClientPotion {
 	function disconnect() {
 		Parent::disconnect();
 
 		MD_Potion.hideUI();
 	}
 };
-activatePackage(MDCPotion);
+activatePackage(MiniDungeonsClientPotion);

@@ -162,8 +162,8 @@ function MD_Guard_Text::setActiveCycle(%this, %index) {
 	}
 }
 
-deActivatePackage(MDCHealthbar);
-package MDCHealthbar {
+deActivatePackage(MiniDungeonsClientHealthbar);
+package MiniDungeonsClientHealthbar {
 	function PlayGUI::onRender(%this) {
 		Parent::onRender(%this);
 
@@ -181,4 +181,4 @@ package MDCHealthbar {
 		}
 	}
 };
-activatePackage(MDCHealthbar);
+activatePackage(MiniDungeonsClientHealthbar);
