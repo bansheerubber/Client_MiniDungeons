@@ -4,20 +4,20 @@ new GuiControl(MD_Healthbar) {
    horizSizing = "right";
    vertSizing = "bottom";
    position = "0 0";
-   extent = "3000 1080";
+   extent = "1024 768";
    minExtent = "8 2";
    enabled = "1";
    visible = "1";
    clipToParent = "1";
       vibrateHealthbar = "5228634";
-      hp = "100";
       maxHp = "100";
+      hp = "100";
 
    new GuiControl(MD_Healthbar_Parent) {
       profile = "GuiDefaultProfile";
       horizSizing = "right";
       vertSizing = "top";
-      position = "10 893";
+      position = "10 581";
       extent = "908 177";
       minExtent = "8 2";
       enabled = "1";
@@ -93,9 +93,9 @@ new GuiControl(MD_Healthbar) {
          maxBitmapHeight = "-1";
          selectable = "1";
          autoResize = "1";
-            hp = "100";
             fontSize = "45";
             maxHp = "100";
+            hp = "100";
       };
       new GuiMLTextCtrl(MD_Guard_Text) {
          profile = "MD_OutlineTextProfile";
@@ -114,9 +114,30 @@ new GuiControl(MD_Healthbar) {
          maxBitmapHeight = "-1";
          selectable = "1";
          autoResize = "1";
-            hp = "100";
             fontSize = "28.8";
             maxHp = "100";
+            hp = "100";
+      };
+      new GuiMLTextCtrl(MD_Skill_Text) {
+         profile = "MD_OutlineTextProfile";
+         horizSizing = "right";
+         vertSizing = "relative";
+         position = "165 123";
+         extent = "430 45";
+         minExtent = "8 2";
+         enabled = "1";
+         visible = "1";
+         clipToParent = "1";
+         lineSpacing = "2";
+         allowColorChars = "0";
+         maxChars = "-1";
+         text = "<font:Palatino Linotype:45><color:dddddd>50 skill";
+         maxBitmapHeight = "-1";
+         selectable = "1";
+         autoResize = "1";
+            fontSize = "28.8";
+            maxHp = "100";
+            hp = "100";
       };
    };
 };

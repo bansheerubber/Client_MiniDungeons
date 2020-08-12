@@ -38,6 +38,14 @@ function MD_Healthbar::resizeHealthbar(%this, %testRes) {
 	MD_Guard_Text.setText("<font:Palatino Linotype:" @ MD_Guard_Text.fontSize @ "><color:dddddd>M -> <color:ffff33>H<color:dddddd> -> M");
 
 	MD_Guard_Text.setActiveCycle(MD_Guard_Text.activeCycle);
+
+	// skill text
+	%newGuardPosition = vectorScale("165 123", %scaleFactor);
+	%newGuardExtent = vectorScale("405 45", %scaleFactor);
+	MD_Skill_Text.resize(getWord(%newGuardPosition, 0), getWord(%newGuardPosition, 1), getWord(%newGuardExtent, 0), getWord(%newGuardExtent, 1));
+	MD_Skill_Text.fontSize = 45 * %scaleFactor;
+
+	MD_Skill_Text.setSkill(MD_Skill_Text.currentSkill);
 }
 
 function MD_Healthbar::getParentPosition(%this, %testRes) {
@@ -141,7 +149,7 @@ function clientCmdMD_SetActiveCycle(%index) {
 function MD_Guard_Text::setActiveCycle(%this, %index) {
 	// reduce guards into string
 	if(%this.guard[0] $= "") {
-		MD_Guard_Text.setText("");
+		%this.setText("");
 	}
 	else {
 		%output = "<font:Palatino Linotype:" @ %this.fontSize @ "><color:dddddd>";
@@ -156,10 +164,34 @@ function MD_Guard_Text::setActiveCycle(%this, %index) {
 		}
 		
 		%output = trim(getSubStr(%output, 0, strLen(%output) - 4));
-		MD_Guard_Text.setText(%output);
+		%this.setText(%output);
 
-		MD_Guard_Text.activeCycle = %index;
+		%this.activeCycle = %index;
 	}
+}
+
+function MD_Skill_Text::setSkill(%this, %skill, %addedAmount) {
+	if(%skill $= "") {
+		%skill = %this.currentSkill;
+	}
+	
+	%extra = "";
+	if(%addedAmount) {
+		%extra = "(" @ (%addedAmount >= 0 ? "+" @ %addedAmount : %addedAmount) @ ")";
+
+		%this.setSkill = %this.schedule(1500, setSkill);
+	}
+	
+	%this.setText(
+		"<font:Palatino Linotype:" @ %this.fontSize @ "><color:dddddd>"
+		@ (%skill | 0) SPC "skill"
+		SPC %extra
+	);
+	%this.currentSkill = %skill;
+}
+
+function clientCmdMD_SetSkill(%skill, %addedAmount) {
+	MD_Skill_Text.setSkill(%skill, %addedAmount);
 }
 
 deActivatePackage(MiniDungeonsClientHealthbar);
