@@ -1,3 +1,5 @@
+// zip -r ~/Client_MiniDungeons.zip ./ -x '*.git*'
+
 schedule(1000, 0, exec, "Add-Ons/Client_MiniDungeons/adjustment.cs");
 
 exec("./profiles/outline.cs");
