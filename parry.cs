@@ -7,9 +7,17 @@ function clientCmdMD_SetUpParryMap() {
 	setUpParryMap();
 }
 
+function clientCmdMD_RemoveParryMap() {
+	removeParryMap();
+}
+
 function setUpParryMap() {
 	ParryMap.bind("keyboard0", "lcontrol", holdParryModifier);
 	ParryMap.push();
+}
+
+function removeParryMap() {
+	ParryMap.pop();
 }
 
 function holdParryModifier(%value) {
@@ -20,6 +28,7 @@ function holdParryModifier(%value) {
 		ParryMouseMap.bind("keyboard0", "ctrl a", "moveLeft");
 		ParryMouseMap.bind("keyboard0", "ctrl s", "moveBackward");
 		ParryMouseMap.bind("keyboard0", "ctrl d", "moveRight");
+		ParryMouseMap.bind("keyboard0", "ctrl space", "jump");
 		ParryMouseMap.push();
 	}
 	else {
@@ -49,7 +58,7 @@ deActivatePackage(MiniDungeonsClientParryMap);
 package MiniDungeonsClientParryMap {
 	function disconnect() {
 		Parent::disconnect();
-		ParryMap.pop();
+		removeParryMap();
 	}
 };
 activatePackage(MiniDungeonsClientParryMap);

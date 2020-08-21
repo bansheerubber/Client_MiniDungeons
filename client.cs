@@ -3,13 +3,15 @@
 schedule(1000, 0, exec, "Add-Ons/Client_MiniDungeons/adjustment.cs");
 
 exec("./profiles/outline.cs");
+exec("./profiles/button.cs");
 
 exec("./healthbar.cs");
 exec("./parry.cs");
 exec("./welcome.cs");
 exec("./potion.cs");
+exec("./tutorial.cs");
 
-$MDC::Version = "r1";
+$MDC::Version = "r13";
 
 function clientCmdMD_Handshake() {
 	commandToServer('MD_Handshake_Ack', $MDC::Version);
