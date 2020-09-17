@@ -10,6 +10,7 @@ exec("./parry.cs");
 exec("./welcome.cs");
 exec("./potion.cs");
 exec("./tutorial.cs");
+exec("./fov.cs");
 
 $MDC::Version = "r13";
 
