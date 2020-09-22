@@ -11,6 +11,7 @@ exec("./welcome.cs");
 exec("./potion.cs");
 exec("./tutorial.cs");
 exec("./fov.cs");
+exec("./map.cs");
 
 $MDC::Version = "r13";
 
